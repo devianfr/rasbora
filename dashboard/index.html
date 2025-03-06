@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frog Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="logo">
+            <h1>Frog</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <div class="button-container">
+                <button class="action-button" onclick="sendRequest('/sell')">Sell</button>
+                <button class="action-button" onclick="sendRequest('/modify')">Modify</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Terminal for logging messages -->
+    <div class="terminal" id="terminal"></div>
+
+</body>
+</html>
