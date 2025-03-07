@@ -6,8 +6,8 @@ access_token = stockiddata.access_token
 
 dhan = dhanhq(client_id, access_token)
 
-securityId = '45546'
-netbuyQty = 75
+securityId = '11915'
+netbuyQty = 1
 
 def fno_sell_order(order_type="LIMIT", limit_price=0):
     global securityId, netbuyQty
@@ -21,11 +21,12 @@ def fno_sell_order(order_type="LIMIT", limit_price=0):
             exchange_segment=dhan.NSE_FNO,
             transaction_type=dhan.SELL,
             quantity=netbuyQty,
-            order_type=order_type_enum,
-            product_type=dhan.SL,
+            order_type=dhan.SL,
+            product_type=dhan.INTRA,
             price=limit_price if order_type == "LIMIT" else 0,
             trigger_price=trigger_price if order_type == "LIMIT" else 0
         )
+        
 
         return order.get('data', {}) or "Order placement failed"
     except Exception as e:

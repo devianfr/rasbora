@@ -18,28 +18,37 @@
 
     <main>
         <div class="main-container">
-            <div class="input-container">
-                <div class="profit-container">-127
+            <!-- Profit Section -->
+            <div class="profit-container">
+                <div id="realized-profit" class="profit-text">
+                    0.00
                 </div>
-
-
-                 <!-- Radio Button Container -->
-                <div class="radio-container">
-                    <label>
-                        <input type="radio" name="orderType" id="marketOrder" value="MARKET" checked> Market
-                    </label>
-                    <label>
-                        <input type="radio" name="orderType" id="limitOrder" value="LIMIT"> Limit
-                    </label>
-                </div>  
-
-                <div class="input-container">
-                    <label for="limitPrice">Limit Price:</label>
-                    <input type="number" id="limitPrice" step="0.01" min="0" placeholder="Enter Limit Price">
-                </div>
-                  
-            
+                <button id="refresh-profit" class="refresh-button">
+                    Refresh
+                </button>
             </div>
+           
+        
+
+            <div class="input-container">
+                <div class="buy-container">
+                    <div class="radio-container">
+                        <label>
+                            <input type="radio" name="orderType" class="radiobutton" id="marketOrder" value="MARKET" checked> M
+                            <input type="radio" name="orderType" class="radiobutton" id="limitOrder" value="LIMIT"> L
+                        </label>
+                    </div>
+                    <div class="input-section">
+                        <input type="number" id="limitPrice" step="0.01" min="0" placeholder="   Limit Price" class="limit-input">
+                    </div>
+                </div>
+                <div class="sell-container">
+    
+                </div>
+                <div class="modify-container"></div>
+            </div>
+
+            <!-- Action Buttons -->
             <div class="button-container">
                 <button class="action-button" onclick="sendRequest('/buyfno')">Buy</button>
                 <button class="action-button" onclick="sendRequest('/sellfno')">Sell</button>

@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request, render_template
 import sellorder
 import buyorder
+from profit import get_realized_profit
 
 app = Flask(__name__, static_folder='dashboard', template_folder='dashboard')
 
@@ -42,6 +43,25 @@ def modifyorderfno():
         return jsonify({"status": "success", "message": response})
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)})
+    
+@app.route("/realized_profit", methods=["GET"])
+def realized_profit():
+    try:
+        profit = get_realized_profit()
+        
+        # Ensure the return type is a proper JSON structure
+        if isinstance(profit, (int, float)):  
+            return jsonify({"status": "success", "realized_profit": profit})
+        
+        elif isinstance(profit, dict):  
+            return jsonify(profit)  # If already a dict, return as-is
+        
+        else:  
+            return jsonify({"status": "error", "message": "Invalid profit format"}), 500
+
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True)

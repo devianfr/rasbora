@@ -27,3 +27,25 @@ function logToTerminal(message) {
     terminal.scrollTop = terminal.scrollHeight;  // Auto-scroll to the latest message
 }
 
+function fetchRealizedProfit() {
+    fetch("/realized_profit")  // Call API
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            let profit = data.realized_profit.toFixed(2);
+            let profitElement = document.getElementById("realized-profit");
+
+            // Update UI
+            profitElement.textContent = `${profit}`;
+            profitElement.style.color = profit >= 0 ? "green" : "red";
+        } else {
+            console.error("Error fetching profit:", data.message);
+        }
+    })
+    .catch(error => console.error("Error:", error));
+}
+
+// Attach event listener to button
+document.getElementById("refresh-profit").addEventListener("click", fetchRealizedProfit);
+
+

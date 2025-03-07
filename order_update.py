@@ -13,9 +13,12 @@ dhan = dhanhq(client_id, access_token)
 client_id = client_id
 access_token = access_token
 
-
+def run_position_update():
+    position_update = dhan.get_positions()
+    return position_update
 
 print(dhan.get_positions())
+print(dhan.get_holdings())
 
 def run_order_update():
     order_client = orderupdate.OrderSocket(client_id, access_token)
