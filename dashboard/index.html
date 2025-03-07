@@ -12,14 +12,37 @@
     <header>
         <div class="header">
             <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="logo">
-            <h1>Frog</h1>
+            <h1>Rasbora</h1>
         </div>
     </header>
 
     <main>
         <div class="main-container">
+            <div class="input-container">
+                <div class="profit-container">-127
+                </div>
+
+
+                 <!-- Radio Button Container -->
+                <div class="radio-container">
+                    <label>
+                        <input type="radio" name="orderType" id="marketOrder" value="MARKET" checked> Market
+                    </label>
+                    <label>
+                        <input type="radio" name="orderType" id="limitOrder" value="LIMIT"> Limit
+                    </label>
+                </div>  
+
+                <div class="input-container">
+                    <label for="limitPrice">Limit Price:</label>
+                    <input type="number" id="limitPrice" step="0.01" min="0" placeholder="Enter Limit Price">
+                </div>
+                  
+            
+            </div>
             <div class="button-container">
-                <button class="action-button" onclick="sendRequest('/sell')">Sell</button>
+                <button class="action-button" onclick="sendRequest('/buyfno')">Buy</button>
+                <button class="action-button" onclick="sendRequest('/sellfno')">Sell</button>
                 <button class="action-button" onclick="sendRequest('/modify')">Modify</button>
             </div>
         </div>

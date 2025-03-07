@@ -13,6 +13,10 @@ dhan = dhanhq(client_id, access_token)
 client_id = client_id
 access_token = access_token
 
+
+
+print(dhan.get_positions())
+
 def run_order_update():
     order_client = orderupdate.OrderSocket(client_id, access_token)
     while True:
