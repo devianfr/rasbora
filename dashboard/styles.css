@@ -94,6 +94,8 @@ main {
     white-space: pre-wrap;
     margin-bottom: 5px;
 }
+
+
 .profit-container{
     font-family:monospace;
     position: absolute;
@@ -117,6 +119,7 @@ main {
     top: 0;
     right: 0;
     padding: 10px;
+    width:120px;
 }
 
 .profit-textbox {
@@ -139,13 +142,13 @@ main {
     bottom: 0;
     left: 0;
     width: 100%;
-    top:525px;
+    top:475px;
 }
 
 .buy-container{
     display: block;
     width: 165px;
-    background-color:darkgray;
+    background-color:dimgray;
     color: silver;
     border: none;
     border-radius: 0px;
@@ -154,11 +157,12 @@ main {
     text-align: center;
 }
 
+
 .sell-container{
     display: block;
     width: 200px;
-    padding: 10px;
-    background-color: #2d2f35;
+    padding-left: 1px;
+    background-color :dimgrey;
     color: silver;
     border: none;
     border-radius: 0px;
@@ -170,8 +174,7 @@ main {
 .modify-container{
     display: block;
     width: 200px;
-    padding: 10px;
-    background-color: #2d2f35;
+    background-color:dimgray;
     color: silver;
     border: none;
     border-radius: 0px;
@@ -189,4 +192,51 @@ main {
 
 .radiobutton{
     accent-color: black;
+}
+
+.profit-section{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width:180px;
+}
+
+.profit-refresh-button-container
+{
+    position: absolute;
+    left:0;
+}
+
+.refresh-button{
+    top: 0;
+    width: 40px;   /* Set the width */
+    height: 50px;   /* Set the height */
+    font-size: 10px; /* Set font size */
+    cursor: pointer; /* Show pointer on hover */
+    background-color: #2d2f35;
+    color:silver;
+    border: none;
+    border-radius: 0px;
+}
+
+.security-section{
+    height: 50px;
+    color: white;
+}
+
+.security-id-input{
+    height: 48px;
+    background-color: #2d2f35;
+    border: none;
+    color:white;
+    width:200px;
+}
+
+.security-qty-input{
+    height: 48px;
+    background-color: #2d2f35;
+    border: none;
+    color:white;
+    width:105px;
+    left: 0;
 }

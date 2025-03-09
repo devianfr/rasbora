@@ -18,14 +18,27 @@
 
     <main>
         <div class="main-container">
+            <div>
+
+            </div>
+
+
             <!-- Profit Section -->
-            <div class="profit-container">
-                <div id="realized-profit" class="profit-text">
-                    0.00
+            <div class="profit-section">
+                <div class="profit-refresh-button-container">
+                    <button id="refresh-profit" class="refresh-button">
+                        R
+                    </button>
                 </div>
-                <button id="refresh-profit" class="refresh-button">
-                    Refresh
-                </button>
+                <div class="profit-container">
+                    <div id="realized-profit" class="profit-text">
+                        0.00
+                    </div>
+                </div>
+            </div>
+            <div class="security-section">
+                <input  id="modifytickerPrice" placeholder="   Security Id" class="security-id-input">
+                <input  id="qtytickerPrice" step="75" min="0" placeholder="   Qty" class="security-qty-input">
             </div>
            
         
@@ -42,17 +55,41 @@
                         <input type="number" id="limitPrice" step="0.01" min="0" placeholder="   Limit Price" class="limit-input">
                     </div>
                 </div>
+
                 <div class="sell-container">
+                    <div class="radio-container">
+                        <label>
+                            <input type="radio" name="sellorderType" class="radiobutton" id="sellmarketOrder" value="MARKET" checked> M
+                            <input type="radio" name="sellorderType" class="radiobutton" id="selllimitOrder" value="LIMIT"> L
+                        </label>
+                    </div>
+
+                    <div class="input-section">
+                        <input type="number" id="selllimitPrice" step="0.01" min="0" placeholder="   Limit Price" class="limit-input" disabled>
+                    </div>
     
                 </div>
-                <div class="modify-container"></div>
+                <div class="modify-container">
+                    <div class="radio-container">
+                        <label>
+                            <input type="radio" name="modifyorderType" class="radiobutton" id="sellmarketOrder" value="MARKET" disabled> M
+                            <input type="radio" name="modifyorderType" class="radiobutton" id="selllimitOrder" value="LIMIT" disabled> L
+                        </label>
+                    </div>
+
+                    <div class="input-section">
+                        <input type="number" id="modifytickerPrice" step="5" min="0" placeholder="   Point Ticker" class="limit-input">
+                    </div>
+
+
+                </div>
             </div>
 
             <!-- Action Buttons -->
             <div class="button-container">
                 <button class="action-button" onclick="sendRequest('/buyfno')">Buy</button>
                 <button class="action-button" onclick="sendRequest('/sellfno')">Sell</button>
-                <button class="action-button" onclick="sendRequest('/modify')">Modify</button>
+                <button class="action-button" onclick="sendRequest('/modifyfno')">Modify</button>
             </div>
         </div>
     </main>
