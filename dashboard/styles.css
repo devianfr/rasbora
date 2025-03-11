@@ -272,3 +272,31 @@ left: 10px;
     width: 100%;
     gap: 2px;
 }
+
+.nav-bar{
+    position:absolute;
+    right: 0px;
+    top: 0px;
+    right: 0;
+    height: 50px;
+    width: 250px;
+    background-color:black;
+    gap:10px;
+}
+
+.nav-button{
+    position: relative;
+    height: 50px;
+    background-color: black;
+    border: none;
+    color: silver;
+    font-size: medium;
+    padding: 10px;
+    left: 10px;
+    right: 20px;
+    width: 100px;
+}
+
+.nav-button:hover{
+    color: white;
+}
