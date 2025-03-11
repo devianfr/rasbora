@@ -142,7 +142,7 @@ main {
     bottom: 0;
     left: 0;
     width: 100%;
-    top:475px;
+    top:10px;
 }
 
 .buy-container{
@@ -239,4 +239,36 @@ main {
     color:white;
     width:105px;
     left: 0;
+}
+.sos-container{
+    width: 50px;
+    height: 50px;
+    border-radius: 2px;
+    border-color: white;
+    
+}
+.sos-button{
+height: 50px;
+width: 50px;
+border-radius: 40px;
+background-color: #444;
+border: none;
+color:white;
+padding: 10px;
+position:absolute;
+top:60px;
+left: 10px;
+}
+.sos-button:hover{
+    background-color: red;
+}
+
+.close-buttons-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 375px; /* Pushes it to the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    gap: 2px;
 }
