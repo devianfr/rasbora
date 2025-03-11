@@ -40,27 +40,37 @@
                 <input  id="modifytickerPrice" placeholder="   Security Id" class="security-id-input">
                 <input  id="qtytickerPrice" step="75" min="0" placeholder="   Qty" class="security-qty-input">
             </div>
+            <div class="sos-container">
+                <button id="sosbutton" class="sos-button">
+                    sos
+                </button>
+
+            </div>
            
         
-
+            <div class="close-buttons-container">
+                <button class="action-button" onclick="sendRequest('/buyfno')" style="background-color: rgb(238, 236, 131); color: black">sos</button>
+                <button class="action-button" id="cancellall" onclick="sendRequest('/cancelallfno')">Cancel All</button>
+                <button class="action-button" onclick="sendRequest('/modifyfno')">Sell All</button>
+            </div>
             <div class="input-container">
                 <div class="buy-container">
                     <div class="radio-container">
                         <label>
-                            <input type="radio" name="orderType" class="radiobutton" id="marketOrder" value="MARKET" checked> M
-                            <input type="radio" name="orderType" class="radiobutton" id="limitOrder" value="LIMIT"> L
+                            <input type="radio" name="orderType" class="radiobutton" id="marketOrder" value="MARKET" > M
+                            <input type="radio" name="orderType" class="radiobutton" id="limitOrder" value="LIMIT" checked> L
                         </label>
                     </div>
                     <div class="input-section">
-                        <input type="number" id="limitPrice" step="0.01" min="0" placeholder="   Limit Price" class="limit-input">
+                        <input type="number" id="limitPrice" step="1" min="0" placeholder="   Limit Price" class="limit-input">
                     </div>
                 </div>
 
                 <div class="sell-container">
                     <div class="radio-container">
                         <label>
-                            <input type="radio" name="sellorderType" class="radiobutton" id="sellmarketOrder" value="MARKET" checked> M
-                            <input type="radio" name="sellorderType" class="radiobutton" id="selllimitOrder" value="LIMIT"> L
+                            <input type="radio" name="sellorderType" class="radiobutton" id="sellmarketOrder" value="MARKET" checked disabled> M
+                            <input type="radio" name="sellorderType" class="radiobutton" id="selllimitOrder" value="LIMIT" disabled> L
                         </label>
                     </div>
 

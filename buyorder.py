@@ -1,25 +1,25 @@
 from dhanhq import dhanhq
 import stockiddata
 
+
 client_id = stockiddata.client_id
 access_token = stockiddata.access_token
+securityId =stockiddata.securityId
 
 dhan = dhanhq(client_id, access_token)
 
-
-securityId ='45546'
-netbuyQty = 75
-
+netbuyQty = 600
 
 def fno_buy_order(order_type="LIMIT", limit_price=0):
     global securityId, netbuyQty
 
     # Determine order type dynamically
-    order_type_enum = dhan.MARKET if order_type == "MARKET" else dhan.LIMIT
+    order_type_enum = dhan.MARKET if order_type == "MARKET" else dhan.SL
 
     # Calculate trigger price only if it's a LIMIT order
-    trigger_price = limit_price - 0.20 if order_type == "LIMIT" else 0
-
+    trigger_price = limit_price
+    limit_price = limit_price + 0.2 if order_type == "LIMIT" else 0
+    
     order = dhan.place_order(
         security_id=securityId,
         exchange_segment=dhan.NSE_FNO,
